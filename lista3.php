@@ -31,7 +31,12 @@ function somarValores($array){
 
 function retornarIntercalados($array, $iarray){
     foreach ($array as $key => $value){
-        $numStorage[] = [$value, $iarray[$key]];
+        if(empty($value) == false){
+            $numStorage[] = $value;
+        }
+        if(empty($iarray[$key]) == false){
+            $numStorage[] = $iarray[$key];
+        }
     }
     
     return $numStorage;
@@ -41,7 +46,15 @@ function retornarIntercalados($array, $iarray){
 
 function retornarIntercalados2($array, $iarray){
     foreach ($array as $key => $value){
-        $numStorage[] = [$value, $iarray[$key]];
+        if(empty($value) == true){
+            $numStorage[] = [$iarray[$key]];
+        }
+        if(empty($iarray[$key]) == true){
+            $numStorage[] = [$value];
+        }
+        else {
+            $numStorage[] = [$value, $iarray[$key]];
+        }
     }
     
     return $numStorage;
