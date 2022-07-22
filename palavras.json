@@ -1,5 +1,90 @@
 {
     "estados": [
-        "acre"
+        "acre",
+        "alagoas",
+        "amap\u00e1",
+        "amazonas",
+        "bahia",
+        "cear\u00e1",
+        "distrito federal",
+        "espirito santo",
+        "goi\u00e1s",
+        "maranh\u00e3o",
+        "mato grosso do sul",
+        "mato grosso",
+        "minas gerais",
+        "par\u00e1",
+        "para\u00edba",
+        "paran\u00e1",
+        "pernambuco",
+        "piau\u00ed",
+        "rio de janeiro",
+        "rio grande do norte",
+        "rio grande do sul",
+        "rond\u00f4nia",
+        "roraima",
+        "santa catarina",
+        "s\u00e3o paulo",
+        "sergipe",
+        "tocantins"
+    ],
+    "animais": [
+        "cachorro",
+        "gato",
+        "cabra",
+        "bode",
+        "boi",
+        "vaca",
+        "borboleta",
+        "coala",
+        "elefante",
+        "flamingo",
+        "macaco",
+        "lagarta",
+        "mamute"
+    ],
+    "cores": [
+        "azul",
+        "branco",
+        "preto",
+        "roxo",
+        "amarelo",
+        "verde",
+        "vermelho",
+        "rosa"
+    ],
+    "frutas": [
+        "ma\u00e7\u00e3",
+        "uva",
+        "laranja",
+        "pera",
+        "mexirica",
+        "mam\u00e3o",
+        "melancia",
+        "mel\u00e3o",
+        "ameixa"
+    ],
+    "marca de computadores": [
+        "intel",
+        "samsung",
+        "alien",
+        "lg",
+        "apple"
+    ],
+    "braga": [
+        "thalys",
+        "lindao"
+    ],
+    "caras legais": [
+        "douglas",
+        "thalys",
+        "murilo",
+        "zani",
+        "hermes",
+        "edgar"
+    ],
+    "carros": [
+        "ferrari",
+        "celta"
     ]
 }
