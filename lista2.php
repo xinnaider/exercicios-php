@@ -108,13 +108,14 @@ function jogarJogo($palavras) {
 
     while ($vidas > 0){
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n░                                   ░\n";
-        gerarDesenho($vidas); ;
-        echo "░" . str_pad(implode($barrasSeparadas), 35, " ", STR_PAD_BOTH) . "░\n░                                   ░\n";
+        gerarDesenho($vidas);
+        print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
+        echo str_pad(implode($barrasSeparadas), 35, " ", STR_PAD_BOTH) . "\n                                   \n";
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
         echo  "░" . str_pad("Dica: " . strtoupper($tema), 35, " ", STR_PAD_BOTH) . "░ \n";
-        print "░┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈░\n";
-        print "░        Letras já utilizadas       ░\n";
-        echo "░" . str_pad($historicoMostra, 35, " ", STR_PAD_BOTH) . "░ \n";
+        print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
+        print "        Letras já utilizadas       \n";
+        echo "" . str_pad($historicoMostra, 35, " ", STR_PAD_BOTH) . " \n";
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
         echo "░" . str_pad("Tentativas restantes: $vidas", 35, " ", STR_PAD_BOTH) . "░ \n";
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
@@ -218,6 +219,11 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
 
     while ($interromper === false){
 
+        $interromper2 = false;
+        $interromper3 = false;
+
+        while ($interromper2 === false) {
+
         if ($barrasSeparadas === $palavraComAcentos){
             clear();
 
@@ -245,19 +251,15 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
             break;
         }
 
-        $interromper2 = false;
-        $interromper3 = false;
-
-        while ($interromper2 === false) {
-
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n░                                   ░\n";
-        gerarDesenho($vidaJg1); ;
-        echo "░" . str_pad(implode($barrasSeparadas), 35, " ", STR_PAD_BOTH) . "░\n░                                   ░\n";
+        gerarDesenho($vidaJg1);
+        print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
+        echo str_pad(implode($barrasSeparadas), 35, " ", STR_PAD_BOTH) . "\n                                   \n";
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
         echo  "░" . str_pad("Dica: " . strtoupper($tema), 35, " ", STR_PAD_BOTH) . "░ \n";
-        print "░┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈░\n";
-        print "░       Letras já utilizadas        ░\n";
-        echo "░" . str_pad($historicoMostra, 35, " ", STR_PAD_BOTH) . "░ \n";
+        print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
+        print "       Letras já utilizadas        \n";
+        echo "" . str_pad($historicoMostra, 35, " ", STR_PAD_BOTH) . " \n";
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
         print "░       É a sua vez: JOGADOR 1      ░\n";
         echo "░" . str_pad("Tentativas restantes: $vidaJg1", 35, " ", STR_PAD_BOTH) . "░ \n";
@@ -352,12 +354,13 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
 
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n░                                   ░\n";
         gerarDesenho($vidaJg2); ;
-        echo "░" . str_pad(implode($barrasSeparadas), 35, " ", STR_PAD_BOTH) . "░\n░                                   ░\n";
+        print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
+        echo "" . str_pad(implode($barrasSeparadas), 35, " ", STR_PAD_BOTH) . "\n                                   \n";
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
         echo  "░" . str_pad("Dica: " . strtoupper($tema), 35, " ", STR_PAD_BOTH) . "░ \n";
-        print "░┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈░\n";
-        print "░       Letras já utilizadas        ░\n";
-        echo "░" . str_pad($historicoMostra, 35, " ", STR_PAD_BOTH) . "░ \n";
+        print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
+        print "       Letras já utilizadas        \n";
+        echo "" . str_pad($historicoMostra, 35, " ", STR_PAD_BOTH) . " \n";
         print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
         print "░       É a sua vez: JOGADOR 2      ░\n";
         echo "░" . str_pad("Tentativas restantes: $vidaJg2", 35, " ", STR_PAD_BOTH) . "░ \n";
@@ -416,8 +419,6 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
             $vidaJg2--;
         }
 
-        
-
         $interromper3 = true;
 
         }
@@ -435,7 +436,7 @@ function adicionarPalavra($palavras) {
     $keys = array_keys($palavras);
 
     print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
-    print "░            Banca de palavras         ░\n";
+    print "░            Lista de grupos            ░\n";
     print "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n";
 
     foreach ($palavras as $chave => $grupo){
@@ -447,7 +448,8 @@ function adicionarPalavra($palavras) {
 
     $escolha = trim(readline("Digite a opção referente ao tema que deseja adicionar novas palavras: "));
 
-    if (empty($escolha)){
+    $choice = isset($escolha);
+    if ($choice === false || $escolha === ""){
         clear();
 
         print "Você não digitou nada! \n \n";
