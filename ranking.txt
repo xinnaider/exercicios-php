@@ -1,0 +1,8 @@
+samuel,1.00,100.00,1
+fernando,1.21,82.54,1
+lukas,1.19,84.03,1
+lukaslukas,1.21,82.54,1
+jorgejorge,1.02,98.04,1
+sfdslfslfl,1.15,85.45,1
+3424",3.10,32.25,1
+evandromur,5.48,9.26,5
