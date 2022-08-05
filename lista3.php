@@ -1,6 +1,6 @@
 <?php 
 
-$arrayex1 = [1, 5, 7, 8, 1, 20];
+$arrayex1 = [1, 2, 3, 4, 5, 6];
 $arrayex2 = [1, 5, 7, 1];
 
 #Escreva uma função que receba um array de valores numéricos e retorne o valor mais alto.
@@ -119,7 +119,7 @@ $arraydupli = [1, 2, 3, 3, 4, 5, 4];
 function removerDuplicados($array){
     foreach ($array as $conteudo) {
         $numStorage[$conteudo] = $conteudo;
-    }
+    } 
 
     return $numStorage;
 }
@@ -157,3 +157,98 @@ function ordenarArray($array, $trueorfalse){
 }
 
 // print_r(ordenarArray($arrayord, true));
+
+# Escreva uma função que embaralhe um array.
+
+function embaralharArray($array){
+
+    $contar = count($array) - 1;
+
+    $arrayX = [];
+    $arrayY = [];
+    $arrayZ = [];
+
+    $al1 = rand(0,1);
+    
+
+    #arrumar para 1 foreach ot
+    
+
+    for ($i=2; $i < $contar+1; $i+=3) { 
+        $arrayZ[] = $array[$i];
+    }  
+    if ($al1 == 1){
+        $arrayZ = reverterArray($arrayZ);
+    }
+
+    $al2 = rand(0,1);
+
+    for ($i=1; $i < $contar+1; $i+=3) { 
+        $arrayX[] = $array[$i];
+    }
+    if ($al2 == 1){
+        $arrayX = reverterArray($arrayX);
+    }
+    
+    $al3 = rand(0,1);
+
+    for ($i=0; $i < $contar+1; $i+=3) { 
+        $arrayY[] = $array[$i];
+    }
+    if ($al3 == 1){
+        $arrayY = reverterArray($arrayY);
+    }
+
+    $aleatorio = rand(1,3);
+
+    switch($aleatorio){
+        case 1:
+            foreach($arrayZ as $valor){
+                $numStorage[] = $valor;
+            }
+            foreach($arrayX as $valor){
+                $numStorage[] = $valor;
+            }
+            foreach($arrayY as $valor){
+                $numStorage[] = $valor;
+            }
+            break;
+        case 2:
+            foreach($arrayX as $valor){
+                $numStorage[] = $valor;
+            }
+            foreach($arrayY as $valor){
+                $numStorage[] = $valor;
+            }
+            foreach($arrayZ as $valor){
+                $numStorage[] = $valor;
+            }
+            break;
+        case 3:
+            foreach($arrayY as $valor){
+                $numStorage[] = $valor;
+            }
+            foreach($arrayZ as $valor){
+                $numStorage[] = $valor;
+            }
+            foreach($arrayX as $valor){
+                $numStorage[] = $valor;
+            }
+    }
+
+    return($numStorage);
+
+}
+
+function embaralharArray2 ($array){
+
+$vezes = rand(3, 10);
+
+for ($i=0; $i < 10; $i++) { 
+    $array = embaralharArray($array);
+}
+
+return $array;
+}
+
+#isarray and merge
