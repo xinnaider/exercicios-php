@@ -1,9 +1,7 @@
 <?php
 
-use JetBrains\PhpStorm\NoReturn;
-
-$arrayex1 = [1, 2, 3, 4, 5, 6,7];
-$arrayex2 = [1, 5, 7, 1];
+$arrayex1 = [1, 2, 3, 4, 4, 3, 3, 3];
+$arrayex2 = [1, 5, 7, 1, 1, 3, 4];
 
 #Escreva uma função que receba um array de valores numéricos e retorne o valor mais alto.
 
@@ -17,6 +15,7 @@ function maiorValor($array){
 
     return $numStorage;
 }
+
 
 #Escreva uma função que receba um array de valores numéricos e retorne a soma dos valores.
 
@@ -32,35 +31,51 @@ function somarValores($array){
 #Escreva uma função que receba dois arrays e retorne um array de valores intercalados.
 
 function retornarIntercalados($array, $iarray){
-    foreach ($array as $key => $value){
-        if(empty($value) == false){
-            $numStorage[] = $value;
+    $cont1 = contar($array);
+    $cont2 = contar($iarray);
+
+    if($cont1 > $cont2){
+        $contar = $cont1;
+    } else $contar = $cont2;
+
+    for ($i=0; $i < $contar; $i++) { 
+        if(!empty($array[$i])){
+            $numStorage[] = $array[$i];
         }
-        if(empty($iarray[$key]) == false){
-            $numStorage[] = $iarray[$key];
+        if(!empty($iarray[$i])){
+            $numStorage[] = $iarray[$i];
         }
     }
-    
     return $numStorage;
 }
 
 #Escreva uma função como a anterior, mas que retorne um array de pares.
 
 function retornarPares($array, $iarray){
-    foreach ($array as $key => $value){
-        if(empty($value) == true){
-            $numStorage[] = [$iarray[$key]];
+
+    $cont1 = contar($array);
+    $cont2 = contar($iarray);
+
+    if($cont1 > $cont2){
+        $contar = $cont1;
+    } else $contar = $cont2;
+
+    for ($i=0; $i < $contar; $i++) { 
+        if(empty($array[$i]) == true){
+            $numStorage[] = [$iarray[$i]];
         }
-        if(empty($iarray[$key]) == true){
-            $numStorage[] = [$value];
+        else if(empty($iarray[$i]) == true){
+            $numStorage[] = [$array[$i]];
         }
         else {
-            $numStorage[] = [$value, $iarray[$key]];
+            $numStorage[] = [$array[$i], $iarray[$i]];
         }
     }
     
     return $numStorage;
 }
+
+print_r(retornarPares($arrayex1, $arrayex2));
 
 #Escreva uma função que receba um array associativo e um array de strings, e retorne uma versão do primeiro array somente com as chaves do segundo.
 
@@ -68,18 +83,15 @@ $arrayex6e1 = ['nome' => 'Jacó', 'idade' => 74, 'profissão' => 'ancião'];
 $arrayex6e2 = ['nome', 'profissão'];
 
 function retornarPrimeiro($array, $arraychaves){
-    $contar = 0;
 
-    foreach ($arraychaves as $conteudo){
-        $contar++;
+    $arrayNovo = [];
+
+    foreach($arraychaves as $linhas){
+        $arrayNovo[$linhas] = $array[$linhas];
     }
 
-    for ($i = 0; $i < $contar; $i++) { 
-        print $arraychaves[$i] . ": ". $array[$arraychaves[$i]] . "\n \n";
-    }
+    return $arrayNovo;
 }
-
-// retornarPrimeiro($arrayex6e1, $arrayex6e2);
 
 #Escreva uma função que reverta um array.
 
@@ -98,21 +110,6 @@ function reverterArray($array){
 
     return $ar2;
 }
-
-// print_r(reverterArray($arrayex1));
-
-#Desafio: escreva uma função que achate um array multidimensional.
-
-$arraymulti = [1, [1, 2], [1, [2, 3], 4]];
-
-function achatarArray($arraymulti){
-
-    for ($i=0; $i < count($arraymulti); $i++) { 
-        print $arraymulti[$i] . "\n \n";
-    }
-}
-
-// achatarArray($arraymulti);
 
 #Escreva uma função que remova valores duplicados de um array.
 
@@ -150,7 +147,7 @@ function ordenarArray($array, $trueorfalse){
             }
         }
         $numStorage[] = $maior;
-        unset($array[$chave]);
+        $array[$chave] = "";
     }
 
     if($trueorfalse == true){
