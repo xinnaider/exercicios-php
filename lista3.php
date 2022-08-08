@@ -245,5 +245,3 @@ function multiarray ($array){
 
     return $array2;
 }
-
-print_r(multiarray($abc)); 
