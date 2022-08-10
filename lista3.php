@@ -1,8 +1,5 @@
 <?php
 
-$arrayex1 = [1, 2, 3, 4, 4, 3, 3, 3];
-$arrayex2 = [1, 5, 7, 1, 1, 3, 4];
-
 #Escreva uma função que receba um array de valores numéricos e retorne o valor mais alto.
 
 function maiorValor($array){
@@ -75,14 +72,9 @@ function retornarPares($array, $iarray){
     return $numStorage;
 }
 
-print_r(retornarPares($arrayex1, $arrayex2));
-
 #Escreva uma função que receba um array associativo e um array de strings, e retorne uma versão do primeiro array somente com as chaves do segundo.
 
-$arrayex6e1 = ['nome' => 'Jacó', 'idade' => 74, 'profissão' => 'ancião'];
-$arrayex6e2 = ['nome', 'profissão'];
-
-function retornarPrimeiro($array, $arraychaves){
+function retornarAssociativo($array, $arraychaves){
 
     $arrayNovo = [];
 
@@ -123,8 +115,6 @@ function removerDuplicados($array){
     return $numStorage;
 }
 
-// print_r(removerDuplicados($arraydupli));
-
 # Escreva uma função que ordene um array.
 
 $arrayord = [2, 5, 6, 2, 4, 8];
@@ -155,7 +145,6 @@ function ordenarArray($array, $trueorfalse){
     }   return $numStorage;
 }
 
-// print_r(ordenarArray($arrayord, true));
 
 # Escreva uma função que embaralhe um array.
 
@@ -170,7 +159,7 @@ function contar($array){
 
 function embaralharArray($array){
 
-    $contar = count($array) - 1;
+    $contar = contar($array) - 1;
 
     $arrayX = [];
     $arrayZ = [];
@@ -227,18 +216,45 @@ function embaralharArray2 ($array){
 
 #isarray and merge
 
-$abc = [1, 2, 3, 4, [4, 2, [2, 6, 4, [4, 2, 3]], 3, 5], 3, [3,6,7]];
-
-function multiarray ($array){
+function AchatarMultiarray ($array){
 
     $array2 = [];
 
     foreach($array as $linha){
         if(is_array($linha)){
-            $array2 = array_merge($array2, multiarray($linha));
+            $array2 = array_merge($array2, AchatarMultiarray($linha));
         }
         else {$array2[] = $linha;}
     }
 
     return $array2;
 }
+
+$arrayex1 = [1, 2, 3, 4, 4, 3, 3, 3];
+$arrayex2 = [1, 5, 7, 1, 1, 3, 4];
+
+// # -----------------------------------------
+// # ex 1
+// print maiorValor($arrayex1);
+// # ex 2
+// print somarValores($arrayex1);
+// # ex 3
+// print_r(retornarIntercalados($arrayex1, $arrayex2));
+// # ex 4
+// print_r(retornarPares($arrayex1, $arrayex2));
+// # ex 5
+// print_r(embaralharArray($arrayex1));
+// # ex 6
+// $arrayex6e1 = ['nome' => 'Jacó', 'idade' => 74, 'profissão' => 'ancião'];
+// $arrayex6e2 = ['nome', 'profissão'];
+// print_r(retornarAssociativo($arrayex6e1, $arrayex6e2));
+// # ex 7
+// print_r(ordenarArray($arrayex1, true));
+// # ex 8
+// print_r(removerDuplicados($arrayex1));
+// # ex 9
+// print_r(reverterArray($arrayex1));
+// # ex 10
+// $abc = [1, 2, 3, 4, [4, 2, [2, 6, 4, [4, 2, 3]], 3, 5], 3, [3,6,7]];
+// print_r(AchatarMultiarray($abc));
+// # -----------------------------------------
