@@ -239,7 +239,7 @@ $arrayex2 = [1, 5, 7, 1, 1, 3, 4];
 // # ex 2
 // print somarValores($arrayex1);
 // # ex 3
-// print_r(retornarIntercalados($arrayex1, $arrayex2));
+print_r(retornarIntercalados($arrayex1, $arrayex2));
 // # ex 4
 // print_r(retornarPares($arrayex1, $arrayex2));
 // # ex 5
