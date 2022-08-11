@@ -1,0 +1,32 @@
+insert into produtos (nome_pro, marca_pro, quantidade_pro, preco_pro) values ('caneta', 'bic', 12, 5.99);
+
+create table produto (
+id_pro SERIAL primary key,
+nome_pro varchar(300),
+marca_pro varchar(300),
+preco_pro double precision,
+quantidade_pro integer
+);
+
+create table movimentacoes (
+id_mov SERIAL primary key,
+tipo_mov varchar(300),
+id_produto_fk integer,
+CONSTRAINT id_produto_fk FOREIGN KEY (id_produto_fk)
+        REFERENCES public.produto (id_pro) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
+
+ALTER TABLE movimentacoes add data_mov datetime;
+
+
+drop table produto, movimentacoes;
+
+delete from produtos where (id_pro = 1);
+
+select * from movimentacoes;
+select * from produto;
+
+insert into
+
