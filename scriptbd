@@ -12,6 +12,7 @@ create table movimentacoes (
 id_mov SERIAL primary key,
 tipo_mov varchar(300),
 id_produto_fk integer,
+data_mov datetime,
 CONSTRAINT id_produto_fk FOREIGN KEY (id_produto_fk)
         REFERENCES public.produto (id_pro) MATCH SIMPLE
         ON UPDATE NO ACTION
