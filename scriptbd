@@ -19,7 +19,7 @@ CONSTRAINT id_produto_fk FOREIGN KEY (id_produto_fk)
         ON DELETE NO ACTION
 );
 
-ALTER TABLE movimentacoes add data_mov datetime;
+ALTER TABLE movimentacoes add quantidade_mov integer;
 
 
 drop table produto, movimentacoes;
