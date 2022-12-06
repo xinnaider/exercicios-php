@@ -234,7 +234,6 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
 
             jogarNovamente2($palavras);
             break;
-            break;
         }
         if ($vidaJg1 == 0) {
             clear();
@@ -247,7 +246,6 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
             $interromper3 = true;
 
             jogarNovamente2($palavras);
-            break;
             break;
         }
 
@@ -335,7 +333,6 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
             $interromper3 = true;
             jogarNovamente2($palavras);
             break;
-            break;
         }
         if ($vidaJg2 == 0) {
             clear();
@@ -348,7 +345,6 @@ $contarPalavra = strlen($palavras[$tema][$escolhaPalavra]) - 1;
             $interromper2 = true;
             $interromper3 = true;
             jogarNovamente2($palavras);
-            break;
             break;
         }
 
