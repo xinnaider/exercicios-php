@@ -1,0 +1,54 @@
+-- Database: db_papelaria
+
+-- DROP DATABASE IF EXISTS db_papelaria;
+
+CREATE DATABASE db_papelaria
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+    -- Table: public.movimentacoes
+
+-- DROP TABLE IF EXISTS public.movimentacoes;
+
+CREATE TABLE IF NOT EXISTS public.movimentacoes
+(
+    id_mov integer NOT NULL DEFAULT nextval('movimentacoes_id_mov_seq'::regclass),
+    tipo_mov character varying(300) COLLATE pg_catalog."default",
+    id_produto_fk integer,
+    data_mov timestamp without time zone,
+    quantidade_mov integer,
+    CONSTRAINT movimentacoes_pkey PRIMARY KEY (id_mov),
+    CONSTRAINT id_produto_fk FOREIGN KEY (id_produto_fk)
+        REFERENCES public.produto (id_pro) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.movimentacoes
+    OWNER to postgres;
+
+-- Table: public.produto
+
+-- DROP TABLE IF EXISTS public.produto;
+
+CREATE TABLE IF NOT EXISTS public.produto
+(
+    id_pro integer NOT NULL DEFAULT nextval('produto_id_pro_seq'::regclass),
+    nome_pro character varying(300) COLLATE pg_catalog."default",
+    marca_pro character varying(300) COLLATE pg_catalog."default",
+    preco_pro double precision,
+    quantidade_pro integer,
+    CONSTRAINT produto_pkey PRIMARY KEY (id_pro)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.produto
+    OWNER to postgres;
