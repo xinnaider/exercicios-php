@@ -1,2 +1,1 @@
-# eficiencia
-exercicios
+Este repositório contém uma coleção de exercícios realizados em PHP. Os exercícios abordam uma variedade de conceitos fundamentais da linguagem PHP, com o objetivo de reforçar o aprendizado e praticar a solução de problemas.
